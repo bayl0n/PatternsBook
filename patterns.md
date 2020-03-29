@@ -65,3 +65,50 @@ while (<value != <end value>) {
 *Observations:*
   * <read pattern> appears twice
   * always test for the "end of input" valye immediately after a <read pattern>.
+
+## The "array loop" pattern
+
+**Goal:** Loop over items in an array.
+
+```
+for (int i = 0; i < <array>.length; i++) {
+  <use the item array[i]>
+}
+```
+
+## The "count" pattern
+
+### Without guard
+
+**Goal:** Count the number of items in a collection.
+
+```
+int count = 0;
+<for each item>
+  count++;
+```
+
+### With guard
+
+**Goal:** Count the number of items that satisfy a condition.
+
+```
+int count = 0;
+<for each item>
+  if(<guard>)
+    count++;
+```
+
+## The "max" pattern
+
+**Goal:** Find the maximum value in a collection of items
+
+```
+<type> max = <smallest number>;
+<for each item> {
+  if(<item> > max)
+    max = <item>;
+}
+```
+**Key idea:**
+If this item is bigger than the max so far, then make it the new max.
