@@ -21,7 +21,8 @@
 
 **Goal:** Show a value to the user
 
-* **Pattern:** ```System.out.println("<label>" + <value>);
+* **Pattern:**
+  ```System.out.println("<label>" + <value>);```
 * **e.g. show an age:**
   System.out.println("age is" + age);
 * **e.g. show a name:**
@@ -32,11 +33,19 @@
 **Goal:** Read a value from the user.
 
 * **Pattern:**
-  ```System.out.print("<prompt>");
-  <type> <variable> = <read operation>;```
-  *Or,*
-  ```System.out.print("<prompt>");
-  <variable> = <read operation>;``` <- (if <variable has already been declared)
+  ```
+  System.out.print("<prompt>");
+  <type> <variable> = <read operation>;
+  ```
+  
+  *Or if <variable> has already been declared,*
+  
+  ```
+  System.out.print("<prompt>");
+  <variable> = <read operation>;
+  ```
 * **e.g. read an age:**
-  ```System.out.print("Age: ");
-  int age = In.nextInt();```
+  ```
+  System.out.print("Age: ");
+  int age = In.nextInt();
+  ```
