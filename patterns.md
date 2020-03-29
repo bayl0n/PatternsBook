@@ -49,3 +49,19 @@
   System.out.print("Age: ");
   int age = In.nextInt();
   ```
+
+## The "read loop" pattern
+
+* **Goal:** Read values until the user enters an "end of input" value.
+
+```
+<read pattern>
+while (<value != <end value>) {
+  <use the value>
+  <read the pattern>
+}
+```
+
+*Observations:*
+  * <read pattern> appears twice
+  * always test for the "end of input" valye immediately after a <read pattern>.
