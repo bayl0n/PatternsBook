@@ -52,7 +52,7 @@
 
 ## The "read loop" pattern
 
-* **Goal:** Read values until the user enters an "end of input" value.
+**Goal:** Read values until the user enters an "end of input" value.
 
 ```
 <read pattern>
