@@ -62,6 +62,6 @@ while (<value != <end value>) {
 }
 ```
 
-*Observations:*
-  * <read pattern> appears twice
-  * always test for the "end of input" valye immediately after a <read pattern>.
+* **Observations:**
+  * ```<read pattern>``` appears twice
+  * always test for the "end of input" value immediately after a ```<read pattern>```.
