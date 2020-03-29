@@ -24,9 +24,9 @@
 * **Pattern:**
   ```System.out.println("<label>" + <value>);```
 * **e.g. show an age:**
-  System.out.println("age is" + age);
+  ```System.out.println("age is" + age);```
 * **e.g. show a name:**
-  System.out.println("name is" + name);
+  ```System.out.println("name is" + name);```
 
 ## The "read" pattern
 
@@ -45,7 +45,7 @@
   <variable> = <read operation>;
   ```
 * **e.g. read an age:**
-  ```
+  ```java
   System.out.print("Age: ");
   int age = In.nextInt();
   ```
