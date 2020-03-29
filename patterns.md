@@ -62,8 +62,7 @@ while (<value != <end value>) {
 }
 ```
 
-<<<<<<< HEAD
-*Observations:*
+**Observations:**
   * <read pattern> appears twice
   * always test for the "end of input" valye immediately after a <read pattern>.
 
@@ -117,4 +116,3 @@ If this item is bigger than the max so far, then make it the new max.
 * **Observations:**
   * ```<read pattern>``` appears twice
   * always test for the "end of input" value immediately after a ```<read pattern>```.
->>>>>>> 114ddf7aec92e3210a170116b54bbf02b3fb5b46
