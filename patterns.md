@@ -64,7 +64,7 @@ while (<value != <end value>) {
 
 **Observations:**
   * <read pattern> appears twice
-  * always test for the "end of input" valye immediately after a <read pattern>.
+  * always test for the "end of input" value immediately after a <read pattern>.
 
 ## The "array loop" pattern
 
@@ -112,7 +112,3 @@ int count = 0;
 ```
 **Key idea:**
 If this item is bigger than the max so far, then make it the new max.
-
-**Observations:**
- * ```<read pattern>``` appears twice
- * always test for the "end of input" value immediately after a ```<read pattern>```.
