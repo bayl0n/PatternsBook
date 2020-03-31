@@ -1,4 +1,4 @@
-# Patterns
+# Patterns - by Nathan Baylon
 
 ## The "sum" pattern
 
