@@ -38,7 +38,7 @@
   <type> <variable> = <read operation>;
   ```
   
-  *Or if <variable> has already been declared,*
+  *Or if \<variable> has already been declared,*
   
   ```
   System.out.print("<prompt>");
