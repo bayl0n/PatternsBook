@@ -38,7 +38,7 @@
   <type> <variable> = <read operation>;
   ```
   
-  *Or if \<variable> has already been declared,*
+  *Or if `<variable>` has already been declared,*
   
   ```
   System.out.print("<prompt>");
@@ -63,8 +63,8 @@ while (<value != <end value>) {
 ```
 
 **Observations:**
-  * <read pattern> appears twice
-  * always test for the "end of input" value immediately after a <read pattern>.
+  * `<read pattern>` appears twice
+  * always test for the "end of input" value immediately after a `<read pattern>`.
 
 ## The "array loop" pattern
 
