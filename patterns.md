@@ -281,4 +281,122 @@ return true;
         return false;
 return true;
 ```
+# Classes
+
+## Constructors
+
+**Goal:** Initialise a new object
+
+```java
+public class Account {
+  ...
+  public Account() {
+    name = ...;
+    type = ...;
+    balance = ...;
+  }
+}
+```
+
+* Constructors are named after the class.
+* Constructors have no return type
+* Constructors initialise the fields of a newly created object
+
+### Initialise from literals
+
+**Goal:** Initialise a new object with literal values
+
+```java
+public class Account {
+  ...
+  public Account() {
+    name = "Default name";
+    type = "Savings";
+    balance = 0.0;
+  }
+}
+```
+
+* Initialise with default values
+
+### Initialise from user
+
+**Goal:** Initialise a new object with values read from the user.
+
+```java
+public class Account {
+  ...
+  public Account() {
+    name = readName();
+    type = readType;
+    balance = readBalance();
+  }
+
+  // As no outside class needs this method, make it private
+  private String readName() {
+    System.out.print("Account name: ");
+    return In.nextLine();
+  }
+}
+```
+
+* Use the read pattern
+
+### Initialise from params
+
+**Goal:** Initialise a new object from parameters.
+
+```java
+public class Account {
+  ...
+  public Account(String name, String type, double balance) {
+    this.name = name;
+    this.type = type;
+    this.balance = balance;
+  }
+}
+```
+
+* Parameters are named after fields.
+* Use this.[name] to refer to a field
+* This [name] to refer to a parameter
+
+## toString method
+
+**Goal:** Return a string representation of the object.
+
+```java
+public class Account {
+  ...
+  @Override
+  public String toString() {
+    return "The account has $" + balance;
+  }
+}
+```
+* This is a standard method of all classes and we override the default behaviour
+
+## Getter and setter methods
+
+```java
+public class Account {
+  private String name;
+  ...
+
+  // Getter
+  public String getName() {
+    return name;
+  }
+
+  // Setter
+  public void setName(String name) {
+    this.name = name;
+  }
+}
+```
+
+* A getter returns a field
+  * The name is get[Field]
+* A setter sets a field
+  * The name is set[Field]
 
