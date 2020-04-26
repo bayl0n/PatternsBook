@@ -400,3 +400,226 @@ public class Account {
 * A setter sets a field
   * The name is set[Field]
 
+# Lists
+
+Lists are data structures that: 
+
+* Store a sequence of elements - like an array
+* Allow new elements to be added - unlike an array!
+* Allow elements to be removed - unlike an array!
+
+They are implement as classes which you import:
+
+```java
+import java.util.*;
+```
+
+Two comment implementations: `ArrayList` and `LinkedList`
+
+## Array Lists
+
+An array list uses an array internally, with extra space at the end so that you have more room to add more elements
+
+When you run out of space, a bigger array is created and the elements copied across.
+
+To insert an element, you must shift elements to the right, then insert it.
+
+### When to use an array list
+
+* Array lists provide instant access to any element. They are FAST.
+* Adding elements to the end of an array list is reasonably fast.
+* Inserting elements near the beginner of a list is slow.
+
+Use an array list if you need random access to elements.
+
+Don't use an array list if you often need to insert elements near the beginning.
+
+## Linked Lists
+
+* Elements are stored in objects that are linked together.
+* To insert an element, just change two arrows to point to a new node.
+
+### When to use a linked list
+
+* Linked lists provide SLOW access to random elements.
+* Adding elements to the beginning or end is FAST.
+* Linked lists require more memory to store the "links".
+
+Use a linked list if you add and remove elements often.
+
+Don't use a linked list if you need fast random access to any element.
+
+Don't use a linked list if you have a large data set and limited memory.
+
+### Generics
+
+* Java 4 and earlier could not restrict elements to a particular type
+  * You couldn't restrict to add a particular data type to a list
+
+* Java 5 added "generics", also known as "type parameters":
+
+  ```java
+  LinkedList<String> list = new LinkedList<String>();
+  list.add("cats");
+  list.add("like");
+  list.add("milk");
+  ```
+
+* We pass <String> as the type parameter to the class LinkedList.
+* Now, a linked list of <String> will permit only string elements:
+
+  ```java
+  list.add(new Burger());
+  ```
+
+This will now throw a compile error.
+
+## Type parameters vs Method parameters
+
+* Method paramaters go after a method and use round brackets:
+
+  ```java
+  System.out.println("zoo");
+  repeat(5, "* ");
+  ```
+
+* Type parameters go after a type and use angled brackets:
+
+  ```java
+  LinkedList<Customer> customers;
+  ArrayList<Card> cards;
+  TreeSet<String> symbols;
+  ```
+
+* Type paramaters must be classes. For primitives, use class wrappers:
+
+  ```java
+  LinkedList<Integer> ages;
+  ArrayList<Double> rainfall;
+  ```
+
+## LinkedList<X> and ArrayList<X> methods
+
+| **Method** | **Description** |
+| --- | --- |
+| add(X element) | Add an element of type X to the end|
+| add(int i, X element) | Add an element of type X at position i |
+| remove(X element) | Remove this element |
+| remove(int i) | Remove the element at position i |
+| set(int i, X element) | Replace the element at position i |
+| X get(int i) | Return the element at position i |
+| int size() | Return the size of the list |
+| clear() | Remove all elements |
+
+## Looping over a list
+
+Use a for-each loop
+
+```java
+LinkedList<String> words = new LinkedList<String>();
+words.add("one");
+words.add("two");
+words.add("three");
+
+for (String word : list)
+  System.out.println(word);
+```
+
+## Copying a list
+
+```java
+LinkedList<String> original = new LinkedList<String>();
+// Add elements to original
+
+LinkedList<String> copy = new LinkedList<String>();
+for (String word : original)
+  copy.add(word);
+```
+
+You now have two lists that contain the same elements.
+
+### What not to do
+
+```java
+LinkedList<String> original = new LinkedList<String>();
+// Add elements to original
+
+LinkedList<String> copy = original;
+```
+
+**This will not work** but instead it will just create two variables that point to the same list.
+
+### Copying a list with addAll
+
+| **Method** | **Description** |
+| --- | --- |
+| addAll(Collection<X> elements) | Add a collection of elements to this list |
+
+```java
+LinkedList<String> original = new LinkedList<String>();
+// Add elements to original
+
+LinkedList<String> copy = new LinkedList<String>();
+copy.addAll(original);
+```
+
+# Find all matches
+
+**Specification:** Find all words in a list that contain "z".
+
+**Solution:** Create a new list and add the matching words.
+
+```java
+private LinkedList<String> zWords (LinkedList<String> words) {
+  LinkedList<String> matches = new LinkedList<String>();
+  for (String word : words)
+    if (word.contains("z"))
+      matches.add(word);
+  return matches;
+}
+```
+
+# Remove all matches - two solutions
+
+* **Solution #1:** Make a list of z words, then remove them all at once
+
+```java
+LinkedList<String> zWords = zWords(list);
+list.removeAll(zWords);
+```
+
+* **Solution #2:** Use an iterator:
+
+```java
+for (Iterator<String> it = list.iterator(); is.hasNext();)
+  if (it.next().contains("z"))
+    it.remove();
+```
+
+The first solution is simpler but slower (loops over the list twice).
+
+The second solution is more complex but more efficient (loops once).
+
+# Remove one match - two solutions
+
+* **Solution #1:** Stop loop after removing to avoid an exception:
+
+```java
+for (String word : list)
+  if (word.contains("z")) {
+    list.remove(word);
+    break;
+  }
+```
+
+* **Solution #2:** Use an iterator:
+
+```java
+for (Iterator<String> it = list.iterator(); is.hasNext();)
+  if (it.next().contains("z")) {
+    it.remove();
+    break;
+  }
+```
+
+**Stop looping** when item is removed.
